@@ -1,2 +1,7 @@
 var a = 'Hello Raul!!';
-console.log(a);
+var b = 5;
+var c = false;
+var someArray = [];
+b = someArray.push(a);
+b = someArray.push(b);
+console.log(b);
