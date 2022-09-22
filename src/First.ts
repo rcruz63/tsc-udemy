@@ -1,5 +1,7 @@
 
-interface Person {
+import {IServer} from './Server'
+
+interface Personz {
     firstName: string,
     lastName: string,
     job?: job, // Optional
@@ -9,7 +11,7 @@ interface Person {
 type job = 'Engineer' | 'Programmer' 
 // | = OR
 
-function generateEmail(person: Person, force?: boolean): string | undefined{
+function generateEmail(person: Personz, force?: boolean): string | undefined{
     /* El compilador es capaz de deducir el retorno, no es obligatorio especificarlo
        Si se especifica el retorno deben coincidir con el tipo retornado si no error */
     // force es un parametro opcional
