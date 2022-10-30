@@ -1,4 +1,5 @@
-import { Comp1 } from '@components/Comp1'
+// import { Comp1 } from '@components/Comp1'
+// import { Comp1 } from './data/components/Comp1'
 
 
 export interface IServer {
@@ -11,22 +12,26 @@ class Server implements IServer{
 
     public port: number;
     public address: string;
-    public comp1 = new Comp1;
+    public date: string = '';
 
     constructor(port: number, address: string){
         this.port = port;
         this.address = address;
+    //    this.date = ''
     }
 
     async startServer(){
-        const data = await this.getData();
+        const data = await this.getData(123);
         console.log(`Starting server at: ${this.address}: ${this.port}`)
+        return function(){
+        //    this.date = 5;
+        }
     }
 
     stopServer(): void {}
 
-    async getData(): Promise<string>{
-        return '{}'
+    async getData(id: number): Promise<string>{
+        return 'some SPecial Data'
     }
 
 }

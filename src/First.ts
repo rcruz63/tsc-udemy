@@ -1,34 +1,43 @@
-
-import {IServer} from './Server'
+import { IServer } from './Server'
 
 interface Personz {
     firstName: string,
     lastName: string,
-    job?: job, // Optional
-    isVisitor?: boolean //Optional
+    job?: job
+    isVisitor?: boolean
 }
 
-type job = 'Engineer' | 'Programmer' 
-// | = OR
+type job = 'Engineer' | 'Programmer'
 
-function generateEmail(person: Personz, force?: boolean): string | undefined{
-    /* El compilador es capaz de deducir el retorno, no es obligatorio especificarlo
-       Si se especifica el retorno deben coincidir con el tipo retornado si no error */
-    // force es un parametro opcional
-    if (person.isVisitor && !force){
+
+function generateEmail(input: Personz, force?: boolean): string | undefined {
+    if (input.isVisitor && !force) {
         return undefined
     } else {
-        return `${person.firstName}.${person.lastName}@email.com`
+        return `${input.firstName}.${input.lastName}@email.com`
     }
 }
 
-function isPerson(potencialPerson: any): boolean{
-    return (('firstName' in potencialPerson) && ('lastName' in potencialPerson)) 
+const abc: string | undefined= generateEmail({}as any);
+
+function toUpperCase(arg: string){}
+
+toUpperCase(abc!)
+
+
+
+function isPerson(potentialPerson: any): boolean {
+    if ('firstName' in potentialPerson &&
+        'lastName' in potentialPerson) {
+        return true
+    } else {
+        return false
+    }
 }
 
-function printEmailIfPerson(potencialPerson:any): void {
-    if (isPerson(potencialPerson)) {
-        console.log(generateEmail(potencialPerson))
+function printEmailIfPerson(potentialPerson: any): void {
+    if (isPerson(potentialPerson)) {
+        console.log(generateEmail(potentialPerson))
     } else {
         console.log('Input is not a person')
     }
@@ -36,9 +45,9 @@ function printEmailIfPerson(potencialPerson:any): void {
 
 printEmailIfPerson({
     firstName: 'John',
-    lastName: 'Doe'
+    lastNames: 'Doe'
 })
 
-async function someAsync() {
+async function someAsyn() {
     return 'async'
 }
