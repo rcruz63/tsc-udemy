@@ -1,0 +1,20 @@
+{
+  "name": "tsc-udemy",
+  "version": "1.0.0",
+  "description": "Repositorio para los desarrollos del curso de TypeScript AWS CDK y React de Udemy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcruz63/tsc-udemy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcruz63/tsc-udemy/issues"
+  },
+  "homepage": "https://github.com/rcruz63/tsc-udemy#readme"
+}
